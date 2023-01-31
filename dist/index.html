@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Signin Template · Bootstrap v5.3</title>
+
+    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <meta name="theme-color" content="#712cf9">
+
+    <style>.bd-placeholder-img {
+  text-anchor: middle;
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: #0000001a;
+  border: 1px solid #00000026;
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em #0000001a, inset 0 .125em .5em #00000026;
+}
+
+.b-example-vr {
+  width: 1.5rem;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  z-index: 2;
+  height: 2.75rem;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  flex-wrap: nowrap;
+  margin-top: -1px;
+  padding-bottom: 1rem;
+  display: flex;
+  overflow-x: auto;
+}
+
+</style>
+
+    <!-- Custom styles for this template -->
+    <link href="/index.cade6eca.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <main class="form-signin w-100 m-auto">
+      <form action="home.html" id="loginform">
+        <img class="mb-4" src="https://www.bleuio.com/images/logo.png" alt="" height="57">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating">
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" required="">
+          <label for="email">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="password" placeholder="Password" required="">
+          <label for="password">Password</label>
+        </div>
+        <div class="form-floating my-2" id="error" style="display: none">
+          <span class="badge text-bg-warning">Wrong username or password, please try again !</span>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">
+          Sign in
+        </button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+      </form>
+    </main>
+    <script>//reditect home page if logged in
+if (localStorage.getItem("isLoggedIn") == "true") window.location.href = "home.html";
+// submit button action
+document.getElementById("loginform").onsubmit = (e)=>{
+    e.preventDefault();
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    // get one user information
+    // fetch("https://reqres.in/api/users/2")
+    //   .then((x) => {
+    //     return x.json();
+    //   })
+    //   .then((y) => {
+    //     let theData = y.data;
+    //     console.log("email", theData.email);
+    //     console.log("fname", theData.first_name);
+    //   });
+    // fetch("https://reqres.in/api/users")
+    //   .then((x) => {
+    //     return x.json();
+    //   })
+    //   .then((y) => {
+    //     let theData = y.data;
+    //     let theUser = theData.filter(
+    //       (z) => z.email == email && z.first_name == password
+    //     );
+    //     if (theUser.length != 0) {
+    //       localStorage.setItem("isLoggedIn", "true");
+    //       localStorage.setItem("userEmail", email);
+    //       window.location.href = "home.html";
+    //     } else {
+    //       document.getElementById("error").style.display = "block";
+    //     }
+    //   });
+    if (email == "s@s.com" && password == "123456") {
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = "home.html";
+    } else {
+        console.log("wrong pass");
+        document.getElementById("error").style.display = "block";
+    }
+};
+
+</script>
+  <script src="/login-with-APIs.9f3e4650.js"></script></body>
+</html>
